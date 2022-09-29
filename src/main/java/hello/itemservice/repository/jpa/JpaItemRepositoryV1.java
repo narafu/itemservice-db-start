@@ -4,6 +4,7 @@ import hello.itemservice.domain.Item;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,13 +18,14 @@ import java.util.Optional;
 @Slf4j
 @Repository
 @Transactional
-public class JpaItemRepository implements ItemRepository {
+@RequiredArgsConstructor
+public class JpaItemRepositoryV1 implements ItemRepository {
 
     private final EntityManager em;
 
-    public JpaItemRepository(EntityManager em) {
-        this.em = em;
-    }
+//    public JpaItemRepositoryV1(EntityManager em) {
+//        this.em = em;
+//    }
 
     @Override
     public Item save(Item item) {
